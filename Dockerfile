@@ -1,6 +1,6 @@
 FROM hiogawa/rails:v0
 MAINTAINER Hiroshi Ogawa <hi.ogawa.zz@gmail.com>
-ADD ../railsApp /code
+COPY ./railsApp /code
 WORKDIR /code
 RUN export PATH="$HOME/.rbenv/bin:$PATH" && \
     eval "$(rbenv init -)"               && \
