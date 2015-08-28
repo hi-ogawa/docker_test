@@ -1,5 +1,6 @@
 web:
   build: .
+  command: export PATH="$HOME/.rbenv/bin:$PATH" && eval "$(rbenv init -)" && rake db:migrate && rails s -p 80
   ports:
    - "80:80"
   links:
