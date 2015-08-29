@@ -1,9 +1,11 @@
-FROM hiogawa/rails:v0
+FROM hiogawa/rails:v1
 MAINTAINER Hiroshi Ogawa <hi.ogawa.zz@gmail.com>
 COPY ./railsApp /code
 WORKDIR /code
-ENV PATH $HOME/.rbenv/bin:$PATH
 RUN eval "$(rbenv init -)" && \
     rbenv rehash           && \
     bundle install         && \
     rbenv rehash
+EXPOSE 80
+CMD eval "$(rbenv init -)" && \
+    rails s -p 80

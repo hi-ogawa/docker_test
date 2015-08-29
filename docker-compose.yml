@@ -1,9 +1,0 @@
-db:
-  image: mysql
-web:
-  build: .
-  command: bash -c eval "$(rbenv init -)" && rake db:migrate && rails s -p 80
-  ports:
-   - "80:80"
-  links:
-   - db
